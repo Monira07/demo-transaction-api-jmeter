@@ -1,4 +1,4 @@
-# Project Title: Automate a demo fintech transaction API by JMETER
+# Project Title: Automate a demo fintech transaction API performance testing by JMeter
 ## Project Name: Dmoney
 
 Project Summary: This system integrates various financial services, enabling users to manage their finances efficiently and securely from a single application. There are four types of users like Admin, Agent, Customer, and Merchant. 
@@ -20,18 +20,19 @@ Merchant receives their bill and they can withdraw their money from the Agent.
 - `./jmeter` (For Linux) or
 - `.jmeter` (For windows)
   
-## How to generate report
+## How to generate the report
   
 ### For JMeter 5.1.1 version or higher:
 To generate the report in Non-GUI mode, execute the test using the below command:
-- For Windows:jmeter -n -t 'your JMX file path' -l 'log file path' -e -o 'Path to output folder'
-- For Linux: ./jmeter.sh -n -t “<test JMX file path>” -l “<test log file path>” -e -o “<Path to output folder>”
+- For Windows: jmeter -n -t &lt;your-JMX-file-path&gt; -l &lt;log-file-path&gt; -e -o &lt;Path-fo-output-folder&gt;
+- For Linux: ./jmeter.sh -n -t “&lt;your-JMX-file-path&gt;” -l “&lt;log-file-path&gt;” -e -o “&lt;Path-fo-output-folder&gt;”
   
 The output folder contains the generated report in HTML format at the end of the test.
 
 ## Documentation
 
 ### Acceptance criteria:
+https://docs.google.com/document/d/13TwzMclkZaCFRvFbHeIcV7OaJ204-ArzNGiDF6lbmxY/edit?usp=sharing
 
 ## Output:
 ![Dmoney perfomance Report](https://github.com/Monira07/demo-transaction-api-jmeter/assets/115618518/3e86d77c-6dc9-4182-a282-7128b50010d2)
