@@ -33,10 +33,12 @@ The output folder contains the generated report in HTML format at the end of the
 
 ## Documentation
 
-### Acceptance criteria:
-https://docs.google.com/document/d/13TwzMclkZaCFRvFbHeIcV7OaJ204-ArzNGiDF6lbmxY/edit?usp=sharing
+### Docs Report
+[Acceptance criteria](https://docs.google.com/document/d/13TwzMclkZaCFRvFbHeIcV7OaJ204-ArzNGiDF6lbmxY/edit?usp=sharing)
 
-## Output:
+## Output
+### Screenshots
+
 ![Dmoney perfomance Report](https://github.com/Monira07/demo-transaction-api-jmeter/assets/115618518/3e86d77c-6dc9-4182-a282-7128b50010d2)
 
 
