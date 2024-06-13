@@ -1,7 +1,8 @@
 # Project Title: Automate a demo fintech transaction API performance testing by JMeter
 ## Project Name: Dmoney
 
-Project Summary: This system integrates various financial services, enabling users to manage their finances efficiently and securely from a single application. There are four types of users like Admin, Agent, Customer, and Merchant. 
+## Project Summary
+This system integrates various financial services, enabling users to manage their finances efficiently and securely from a single application. There are four types of users like Admin, Agent, Customer, and Merchant. 
 In this project, I have created a flow where the admin can log in and create new users, and perform several CRUD actions for the users. Also, the users can perform several transactions like send money, deposit, withdraw, payment etc. and check their own balance and statements. 
 The Agent can deposit money to the Customer account and another Agent account, and pay Merchant bill.
 The customer can send money to the other customer, withdraw money from an agent and they can pay their Merchant bill. 
