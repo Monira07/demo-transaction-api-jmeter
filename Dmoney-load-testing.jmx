@@ -125,13 +125,13 @@
             <boolProp name="ISREGEX">true</boolProp>
           </JSONPathAssertion>
           <hashTree/>
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor Customer Phone Number">
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor Customer Phone Number" enabled="true">
             <stringProp name="JSONPostProcessor.referenceNames">customerAccountNumber</stringProp>
             <stringProp name="JSONPostProcessor.jsonPathExprs">$.user.phone_number</stringProp>
             <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
           </JSONPostProcessor>
           <hashTree/>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable" enabled="true">
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable">
             <stringProp name="variableName">randomCustomerId</stringProp>
             <stringProp name="outputFormat"></stringProp>
             <stringProp name="minimumValue">1000</stringProp>
@@ -140,7 +140,7 @@
             <boolProp name="perThread">false</boolProp>
           </RandomVariableConfig>
           <hashTree/>
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor Customer email">
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor Customer email" enabled="true">
             <stringProp name="JSONPostProcessor.referenceNames">customerEmail</stringProp>
             <stringProp name="JSONPostProcessor.jsonPathExprs">$.user.email</stringProp>
             <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
@@ -173,7 +173,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable" enabled="true">
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable">
             <stringProp name="variableName">randomAgentId</stringProp>
             <stringProp name="outputFormat"></stringProp>
             <stringProp name="minimumValue">1000</stringProp>
@@ -182,7 +182,7 @@
             <boolProp name="perThread">false</boolProp>
           </RandomVariableConfig>
           <hashTree/>
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor Phone Number">
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor Phone Number" enabled="true">
             <stringProp name="JSONPostProcessor.referenceNames">agentAccountNumber</stringProp>
             <stringProp name="JSONPostProcessor.jsonPathExprs">$.user.phone_number</stringProp>
             <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
@@ -217,10 +217,10 @@
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-    &quot;name&quot;:&quot;JuguMerchant${randomAgentId}&quot;,&#xd;
-    &quot;email&quot;:&quot;jugu.merchant${randomAgentId}@hotmail.com&quot;,&#xd;
+    &quot;name&quot;:&quot;JuguMerchant${randomMerchantId}&quot;,&#xd;
+    &quot;email&quot;:&quot;jugu.merchant${randomMerchantId}@hotmail.com&quot;,&#xd;
     &quot;password&quot;:&quot;123456&quot;,&#xd;
-    &quot;phone_number&quot;:&quot;0120854${randomAgentId}&quot;, &#xd;
+    &quot;phone_number&quot;:&quot;0120854${randomMerchantId}&quot;, &#xd;
     &quot;nid&quot;:&quot;1234567&quot;,&#xd;
     &quot;role&quot;:&quot;Merchant&quot;&#xd;
 }</stringProp>
@@ -230,8 +230,8 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable" enabled="true">
-            <stringProp name="variableName">randomAgentId</stringProp>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable">
+            <stringProp name="variableName">randomMerchantId</stringProp>
             <stringProp name="outputFormat"></stringProp>
             <stringProp name="minimumValue">1000</stringProp>
             <stringProp name="maximumValue">9999</stringProp>
@@ -245,7 +245,7 @@
             <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
           </JSONPostProcessor>
           <hashTree/>
-          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check if Merchant is Created">
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check if Merchant is Created" enabled="true">
             <stringProp name="JSON_PATH">$.message</stringProp>
             <stringProp name="EXPECTED_VALUE">User created</stringProp>
             <boolProp name="JSONVALIDATION">true</boolProp>
@@ -267,7 +267,7 @@
           </JSONPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Search User">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Search User" enabled="true">
           <stringProp name="HTTPSampler.domain">${baseUrl}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">/user/search/id/${merchantId}</stringProp>
@@ -280,7 +280,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check search user result">
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check search user result" enabled="true">
             <stringProp name="JSON_PATH">$.message</stringProp>
             <stringProp name="EXPECTED_VALUE">User found</stringProp>
             <boolProp name="JSONVALIDATION">true</boolProp>
@@ -290,7 +290,7 @@
           </JSONPathAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="System Login">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="System Login" enabled="true">
           <stringProp name="HTTPSampler.domain">${baseUrl}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">user/login</stringProp>
@@ -318,7 +318,7 @@
             <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
           </JSONPostProcessor>
           <hashTree/>
-          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check if system user logged in">
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check if system user logged in" enabled="true">
             <stringProp name="JSON_PATH">$.message</stringProp>
             <stringProp name="EXPECTED_VALUE">Login successfully</stringProp>
             <boolProp name="JSONVALIDATION">true</boolProp>
@@ -328,7 +328,7 @@
           </JSONPathAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Deposit System AC to Agent">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Deposit System AC to Agent" enabled="true">
           <stringProp name="HTTPSampler.domain">${baseUrl}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">/transaction/deposit</stringProp>
@@ -361,7 +361,7 @@
           </JSONPathAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Agent Login">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Agent Login" enabled="true">
           <stringProp name="HTTPSampler.domain">${baseUrl}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">user/login</stringProp>
@@ -399,7 +399,7 @@
           </JSONPathAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Deposit Agent to Customer">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Deposit Agent to Customer" enabled="true">
           <stringProp name="HTTPSampler.domain">${baseUrl}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">/transaction/deposit</stringProp>
@@ -422,7 +422,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check deposite money from SYSTEM account to Customer account">
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check deposite money from SYSTEM account to Customer account" enabled="true">
             <stringProp name="JSON_PATH">$.message</stringProp>
             <stringProp name="EXPECTED_VALUE">Deposit successful</stringProp>
             <boolProp name="JSONVALIDATION">true</boolProp>
@@ -432,7 +432,7 @@
           </JSONPathAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Customer Login">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Customer Login" enabled="true">
           <stringProp name="HTTPSampler.domain">${baseUrl}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">user/login</stringProp>
@@ -454,13 +454,13 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor">
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
             <stringProp name="JSONPostProcessor.referenceNames">customerToken</stringProp>
             <stringProp name="JSONPostProcessor.jsonPathExprs">$.token</stringProp>
             <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
           </JSONPostProcessor>
           <hashTree/>
-          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check if Customer is loggedin">
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check if Customer is loggedin" enabled="true">
             <stringProp name="JSON_PATH">$.message</stringProp>
             <stringProp name="EXPECTED_VALUE">Login successfully</stringProp>
             <boolProp name="JSONVALIDATION">true</boolProp>
@@ -470,7 +470,7 @@
           </JSONPathAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Check Customer balance">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Check Customer balance" enabled="true">
           <stringProp name="HTTPSampler.domain">${baseUrl}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">/transaction/balance/${customerAccountNumber}</stringProp>
@@ -483,7 +483,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check Customer Balance">
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check Customer Balance" enabled="true">
             <stringProp name="JSON_PATH">$.message</stringProp>
             <stringProp name="EXPECTED_VALUE">User balance</stringProp>
             <boolProp name="JSONVALIDATION">true</boolProp>
@@ -493,7 +493,7 @@
           </JSONPathAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Withdraw from Customer to Agent">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Withdraw from Customer to Agent" enabled="true">
           <stringProp name="HTTPSampler.domain">${baseUrl}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">/transaction/withdraw</stringProp>
@@ -516,7 +516,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check Withdraw from customer account">
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check Withdraw from customer account" enabled="true">
             <stringProp name="JSON_PATH">$.message</stringProp>
             <stringProp name="EXPECTED_VALUE">Withdraw successful</stringProp>
             <boolProp name="JSONVALIDATION">true</boolProp>
@@ -548,8 +548,18 @@
             </collectionProp>
           </elementProp>
         </HTTPSamplerProxy>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Check Merchant balance">
+        <hashTree>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Check Payment Customer to Merchant">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Payment successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Check Merchant balance" enabled="true">
           <stringProp name="HTTPSampler.domain">${baseUrl}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">/transaction/balance/${merchantAccountNumber}</stringProp>
